@@ -24,51 +24,65 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            overflow-x: hidden;
             letter-spacing: 1px;
-        }
-
-        .container {
+            padding: 60px 20px;
             display: flex;
-            min-height: 100vh;
-            width: 100vw;
+            justify-content: center;
         }
 
-        /* ЛЕВАЯ ЧАСТЬ: ВИЗУАЛЬНЫЙ КОЛЛАЖ */
-        .visual-panel {
+        .main-wrapper {
+            max-width: 1100px;
+            width: 100%;
+            background: radial-gradient(circle at 80% 20%, #151b24 0%, #0b0c10 100%);
+            padding: 50px;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+            border: 1px solid rgba(143, 119, 67, 0.1);
+        }
+
+        /* ШАХМАТНАЯ СЕТКА */
+        .grid-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 5%;
+            margin-bottom: 60px;
+        }
+
+        .grid-row:last-of-type {
+            margin-bottom: 30px;
+        }
+
+        /* Направление элементов для шахматного порядка */
+        .row-reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* БЛОКИ КОНТЕНТА (РОВНО ПО 50% ШИРИНЫ) */
+        .content-block {
             width: 50%;
-            position: relative;
-            background-color: #000;
             display: flex;
             flex-direction: column;
-            overflow-y: auto;
-            border-right: 1px solid rgba(143, 119, 67, 0.2);
+            justify-content: flex-start;
         }
 
-        .visual-panel::-webkit-scrollbar {
-            width: 4px;
-        }
-        .visual-panel::-webkit-scrollbar-thumb {
-            background: var(--accent-color);
-        }
-
-        .img-container {
-            width: 100%;
-            height: 50vh;
+        .media-block {
+            width: 50%;
             position: relative;
             overflow: hidden;
-            border-bottom: 1px solid rgba(143, 119, 67, 0.1);
+            border: 1px solid rgba(143, 119, 67, 0.15);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
 
-        .img-container img {
+        .media-block img {
             width: 100%;
-            height: 100%;
+            height: auto;
+            display: block;
             object-fit: cover;
-            filter: grayscale(35%) contrast(110%) brightness(85%);
+            filter: grayscale(25%) contrast(105%) brightness(85%);
             transition: all 0.5s ease;
         }
 
-        .img-container:hover img {
+        .media-block:hover img {
             filter: grayscale(0%) contrast(100%) brightness(95%);
         }
 
@@ -80,28 +94,19 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            background: rgba(11, 12, 16, 0.75);
+            background: rgba(11, 12, 16, 0.85);
             padding: 5px 10px;
             border-left: 2px solid var(--accent-color);
         }
 
-        /* ПРАВАЯ ЧАСТЬ: СТАТУСНЫЙ ТЕКСТ */
-        .info-panel {
-            width: 50%;
-            padding: 8% 8% 5% 8%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            overflow-y: auto;
-            background: radial-gradient(circle at 80% 20%, #151b24 0%, #0b0c10 100%);
-        }
-
+        /* ТЕКСТОВЫЕ СТИЛИ */
         .header-title {
             font-size: 0.85rem;
             text-transform: uppercase;
             color: var(--accent-color);
             letter-spacing: 4px;
             margin-bottom: 10px;
+            padding-top: 5px; /* Микро-смещение для идеального выравнивания с верхом фото */
         }
 
         h1 {
@@ -109,20 +114,15 @@
             font-weight: 400;
             color: #ffffff;
             line-height: 1.2;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border-bottom: 1px solid rgba(143, 119, 67, 0.15);
-            padding-bottom: 20px;
+            padding-bottom: 15px;
         }
 
         .text-block {
-            margin-bottom: 25px;
             text-align: justify;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: #b2b4b8;
-        }
-
-        .text-block p {
-            margin-bottom: 15px;
         }
 
         /* ССЫЛКИ И КНОПКИ */
@@ -140,7 +140,7 @@
 
         .audit-btn {
             display: inline-block;
-            margin-top: 40px;
+            margin-top: 25px;
             padding: 15px 35px;
             background-color: transparent;
             border: 1px solid var(--accent-color);
@@ -162,102 +162,98 @@
         }
 
         .footer-note {
-            margin-top: auto;
-            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(143, 119, 67, 0.1);
+            padding-top: 20px;
             font-size: 0.7rem;
             color: #4f5d73;
             text-transform: uppercase;
             letter-spacing: 1px;
+            text-align: center;
         }
 
-        /* АДАПТИВНОСТЬ ПОД МОБИЛЬНЫЕ УСТРОЙСТВА */
-        @media (max-width: 900px) {
-            .container {
+        /* АДАПТИВНОСТЬ ПОД POCO X7 PRO И ДРУГИЕ СМАРТФОНЫ */
+        @media (max-width: 850px) {
+            body {
+                padding: 15px;
+            }
+            .main-wrapper {
+                padding: 25px 20px;
+            }
+            .grid-row, .row-reverse {
                 flex-direction: column;
+                gap: 25px;
+                margin-bottom: 45px;
             }
-            .visual-panel {
+            .content-block, .media-block {
                 width: 100%;
-                height: 45vh;
-                flex-direction: row;
-                overflow-x: auto;
-                overflow-y: hidden;
-                border-right: none;
-                border-bottom: 1px solid rgba(143, 119, 67, 0.2);
-            }
-            .img-container {
-                width: 85vw;
-                height: 100%;
-                flex-shrink: 0;
-                border-bottom: none;
-                border-right: 1px solid rgba(143, 119, 67, 0.1);
-            }
-            .info-panel {
-                width: 100%;
-                padding: 40px 25px;
             }
             h1 {
                 font-size: 2rem;
+                margin-bottom: 15px;
+            }
+            .media-block {
+                order: -1; /* Фото на мобилках всегда будет сверху своего абзаца */
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="main-wrapper">
         
-        <!-- ЛЕВАЯ ПАНЕЛЬ: ГАЛЕРЕЯ -->
-        <div class="visual-panel">
-            
-            <!-- Твое фото в формате PNG -->
-            <div class="img-container">
+        <div class="grid-row">
+            <div class="media-block">
                 <img src="assets/my-photo.png" alt="Alexander Romanets">
                 <div class="img-caption">Alexander Romanets</div>
             </div>
             
-            <!-- Индустриальное концептуальное фото -->
-            <div class="img-container">
-                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1000" alt="Industrial Asset">
-                <div class="img-caption">Industrial Systems & Engineering</div>
+            <div class="content-block">
+                <div class="header-title">Official Registry</div>
+                <h1>Lord Alexander Romanets</h1>
+                <div class="text-block">
+                    <p>
+                        На основании <a href="assets/lord-certificate.pdf" target="_blank" class="document-link">официального регистрационного акта № Q23547</a> наделен легальным статусом и правом использования титула Лорда Гленко (Lord of Glencoe) в рамках международной хартии сохранения наследия Шотландии. Подлинность статуса и правомерность владения сувенирным участком подтверждены уполномоченным органом <a href="https://www.highlandtitles.com" target="_blank" class="document-link">Highland Titles</a>.
+                    </p>
+                </div>
             </div>
-            
-            <!-- Пейзаж Гленко 1 -->
-            <div class="img-container">
+        </div>
+
+        <div class="grid-row row-reverse">
+            <div class="media-block">
                 <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&q=80&w=1000" alt="Glencoe Highland">
                 <div class="img-caption">Glencoe Estates, Scotland</div>
             </div>
             
-            <!-- Пейзаж Гленко 2 -->
-            <div class="img-container">
+            <div class="content-block">
+                <div class="text-block" style="padding-top: 15px;">
+                    <p>
+                        Основатель независимой технологической компании, специализирующейся на проектировании и комплексной разработке мобильного программного обеспечения. Деятельность сфокусирована на создании закрытых коммерческих систем повышенной отказоустойчивости, а также на проектировании концептуальных интерактивных мобильных платформ.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-row">
+            <div class="media-block">
                 <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&q=80&w=1000" alt="Highland Nature Reserve">
                 <div class="img-caption">Highland Titles Nature Reserve</div>
             </div>
-
+            
+            <div class="content-block">
+                <div class="text-block" style="padding-top: 15px;">
+                    <p>
+                        Обладает глубокой междисциплинарной экспертизой на стыке высоких технологий и тяжелой промышленности. Профессиональный бэкграунд в индустриальном секторе формирует жесткий аналитический подход к управлению сложными техническими процессами и архитектурными решениями.
+                    </p>
+                </div>
+                <div>
+                    <button class="audit-btn" onclick="alert('Доступ ограничен. Запросы принимаются только по закрытым каналам связи.')">Запросить аудит</button>
+                </div>
+            </div>
         </div>
 
-        <!-- ПРАВАЯ ПАНЕЛЬ: ТЕКСТ -->
-        <div class="info-panel">
-            <div class="header-title">Official Registry</div>
-            <h1>Lord Alexander Romanets</h1>
-            
-            <div class="text-block">
-                <p>
-                    Основатель независимой технологической компании, специализирующейся на проектировании и комплексной разработке мобильного программного обеспечения. Деятельность сфокусирована на создании закрытых коммерческих систем повышенной отказоустойчивости, а также на проектировании концептуальных интерактивных мобильных платформ.
-                </p>
-                <p>
-                    Обладает глубокой междисциплинарной экспертизой на стыке высоких технологий и тяжелой промышленности. Профессиональный бэкграунд в индустриальном секторе формирует жесткий аналитический подход к управлению сложными техническими процессами и архитектурными решениями.
-                </p>
-                <p>
-                    На основании <a href="assets/lord-certificate.pdf" target="_blank" class="document-link">официального регистрационного акта № Q23547</a> наделен легальным статусом и правом использования титула Лорда Гленко (Lord of Glencoe) в рамках международной хартии сохранения наследия Шотландии. Подлинность статуса и правомерность владения сувенирным участком подтверждены уполномоченным органом <a href="https://www.highlandtitles.com" target="_blank" class="document-link">Highland Titles</a>.
-                </p>
-            </div>
-
-            <div>
-                <button class="audit-btn" onclick="alert('Доступ ограничен. Запросы принимаются только по закрытым каналам связи.')">Запросить аудит</button>
-            </div>
-
-            <div class="footer-note">
-                © 2026 Lord Alexander Romanets. All rights reserved. Code status: secured.
-            </div>
+        <div class="footer-note">
+            © 2026 Lord Alexander Romanets. All rights reserved. Code status: secured.
         </div>
 
     </div>
