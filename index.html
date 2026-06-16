@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander Romanets | Lord of Glencoe</title>
+    <style>
+        :root {
+            --primary-color: #0b2e1d; /* Шотландский зеленый */
+            --accent-color: #d4af37;  /* Золотой */
+            --text-light: #f4f6f0;    /* Светло-кремовый текст */
+            --bg-dark: #071f13;       /* Темный изумрудный для фона */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+            background-color: var(--primary-color);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .crest {
+            font-size: 3.5rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .divider {
+            height: 2px;
+            width: 80px;
+            background-color: var(--accent-color);
+            margin: 0 auto 25px auto;
+        }
+
+        .bio {
+            font-size: 1.05rem;
+            text-align: justify;
+            margin-bottom: 30px;
+            color: #e0e5da;
+            text-indent: 20px;
+        }
+
+        .info-badge {
+            background-color: rgba(7, 31, 19, 0.6);
+            border: 1px dashed var(--accent-color);
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .info-badge p {
+            margin: 5px 0;
+        }
+
+        .info-badge strong {
+            color: var(--accent-color);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 5px;
+        }
+
+        /* Стили для карты */
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid var(--accent-color);
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Кнопка */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: rgba(244, 246, 240, 0.4);
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 15px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Символический шотландский знак (чертополох/корона) -->
+        <div class="crest">👑</div>
+        
+        <h1>Alexander Romanets</h1>
+        <div class="subtitle">Lord of Glencoe</div>
+        <div class="divider"></div>
+
+        <div class="bio">
+            Добро пожаловать. Данная страница является официальным цифровым подтверждением статуса и прав на сувенирное владение в графстве Аргайл, Шотландия. В соответствии с многовековыми традициями и шотландским законодательством, владение участком земли в заповеднике Гленко дает законное право на использование почетного титула Лорда (Laird).
+        </div>
+
+        <!-- Блок верификации -->
+        <div class="info-badge">
+            <p><strong>Статус:</strong> Официальный сувенирный титул Лорда</p>
+            <p><strong>Провайдер реестра:</strong> Highland Titles</p>
+            <p><strong>Личный номер участка:</strong> № Q23547</p>
+        </div>
+
+        <h3>Геолокация владений</h3>
+        
+        <!-- Встроенная интерактивная карта Google Карты (координаты Гленко) -->
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17676.01258957876!2d-5.1219445!3d56.6669444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48894ea705555555%3A0x6b876fc155555555!2sHighland%20Titles%20Nature%20Reserve!5e1!3m2!1sru!2s!4v1718545000000!5m2!1sru!2s" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <!-- Кнопка-ссылка для перехода в приложение Google Карты -->
+        <a href="https://maps.google.com/?q=Highland+Titles+Nature+Reserve+Glencoe+Scotland" target="_blank" class="btn">
+            Открыть точку в приложении Google Maps
+        </a>
+    </div>
+
+    <footer>
+        © 2026 Lord Alexander Romanets. All rights reserved.
+    </footer>
+
+</body>
+</html>
