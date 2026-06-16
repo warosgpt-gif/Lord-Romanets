@@ -100,13 +100,22 @@
         }
 
         /* ТЕКСТОВЫЕ СТИЛИ */
+        .main-title-ru {
+            font-size: 1.4rem;
+            font-weight: normal;
+            font-style: italic;
+            color: var(--accent-light);
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+            padding-top: 5px; /* Идеальное выравнивание с верхом первой фотографии */
+        }
+
         .header-title {
             font-size: 0.85rem;
             text-transform: uppercase;
             color: var(--accent-color);
             letter-spacing: 4px;
-            margin-bottom: 10px;
-            padding-top: 5px; /* Микро-смещение для идеального выравнивания с верхом фото */
+            margin-bottom: 15px;
         }
 
         h1 {
@@ -193,7 +202,10 @@
                 margin-bottom: 15px;
             }
             .media-block {
-                order: -1; /* Фото на мобилках всегда будет сверху своего абзаца */
+                order: -1; /* Фото на мобилках всегда сверху своего абзаца */
+            }
+            .main-title-ru {
+                padding-top: 0;
             }
         }
     </style>
@@ -202,6 +214,7 @@
 
     <div class="main-wrapper">
         
+        <!-- РЯД 1: ТВОЕ ФОТО (СЛЕВА) | ТИТУЛ И АКТ (СПРАВА) -->
         <div class="grid-row">
             <div class="media-block">
                 <img src="assets/my-photo.png" alt="Alexander Romanets">
@@ -209,6 +222,7 @@
             </div>
             
             <div class="content-block">
+                <div class="main-title-ru">Лорд Шотландии</div>
                 <div class="header-title">Official Registry</div>
                 <h1>Lord Alexander Romanets</h1>
                 <div class="text-block">
@@ -219,6 +233,7 @@
             </div>
         </div>
 
+        <!-- РЯД 2: ТЕХНОЛОГИИ (СЛЕВА) | ПЕЙЗАЖ ГЛЕНКО 1 (СПРАВА) -->
         <div class="grid-row row-reverse">
             <div class="media-block">
                 <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&q=80&w=1000" alt="Glencoe Highland">
@@ -228,12 +243,13 @@
             <div class="content-block">
                 <div class="text-block" style="padding-top: 15px;">
                     <p>
-                        Основатель независимой технологической компании, специализирующейся на проектировании и комплексной разработке мобильного программного обеспечения. Деятельность сфокусирована на создании закрытых коммерческих систем повышенной отказоустойчивости, а также на проектировании концептуальных интерактивных мобильных платформ.
+                        Его сиятельство Лорд Александр Романец — основатель независимой технологической компании, специализирующейся на проектировании и комплексной разработке мобильного программного обеспечения. Деятельность сфокусирована на создании закрытых коммерческих систем повышенной отказоустойчивости, а также на проектировании концептуальных интерактивных мобильных платформ.
                     </p>
                 </div>
             </div>
         </div>
 
+        <!-- РЯД 3: ПЕЙЗАЖ ГЛЕНКО 2 (СЛЕВА) | ИНДУСТРИАЛЬНЫЙ БЭКГРАУНД (СПРАВА) -->
         <div class="grid-row">
             <div class="media-block">
                 <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&q=80&w=1000" alt="Highland Nature Reserve">
@@ -252,6 +268,7 @@
             </div>
         </div>
 
+        <!-- ПОДВАЛ СТРАНИЦЫ -->
         <div class="footer-note">
             © 2026 Lord Alexander Romanets. All rights reserved. Code status: secured.
         </div>
